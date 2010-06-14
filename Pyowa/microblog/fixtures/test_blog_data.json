@@ -1,0 +1,6 @@
+[
+    {"pk": 1, "model": "auth.user", "fields": {"username": "matt", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2010-06-13 18:27:41", "groups": [], "user_permissions": [], "password": "sha1$7a297$44ea04fd9c3a0c7ed138300205ced5bdf5ada6b7", "email": "matt@matt.com", "date_joined": "2010-06-12 10:31:57"}},    
+    {"pk": 1, "model": "microblog.microblog", "fields": {"poster": 1, "message": "here is a blog, my first one!", "posted_time": "2010-06-13 18:28:18"}},
+    {"pk": 2, "model": "microblog.microblog", "fields": {"poster": 1, "message": "second blog", "posted_time": "2010-06-13 18:28:26"}},
+    {"pk": 3, "model": "microblog.microblog", "fields": {"poster": 1, "message": "third blog", "posted_time": "2010-06-13 18:28:33"}}
+]
