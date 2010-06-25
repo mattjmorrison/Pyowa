@@ -93,4 +93,5 @@ INSTALLED_APPS = (
     'Pyowa.microblog',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'Pyowa.shortcuts',
 )
