@@ -19,12 +19,6 @@ TEMPLATE = template.Template("""
 
 class SqlLoggerMiddleware(object):
     def process_response(self, request, response):
-
-        for c in connections.all():
-            print c.queries
-            #for q in c.:
-            #    print q['sql']
         queries = [[{'sql':q['sql'], 'time':q['time']} for q in c.queries] for c in connections.all()]
-        #print queries
         response.write(TEMPLATE.render(template.Context({'queries':list(itertools.chain.from_iterable(queries))})))
         return response
