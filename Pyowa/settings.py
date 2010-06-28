@@ -74,6 +74,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'Pyowa.sqllogger.middleware.SqlLoggerMiddleware',
+    'Pyowa.permissions.middleware.Permissions',
 )
 
 ROOT_URLCONF = 'Pyowa.urls'
@@ -95,4 +96,5 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'Pyowa.shortcuts',
+    'Pyowa.permissions',
 )
