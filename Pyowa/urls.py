@@ -1,4 +1,5 @@
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import include
+from Pyowa.viewattrs.urls import patterns, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -14,5 +15,5 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    (r'^/?$', include('Pyowa.microblog.urls')),
+    url(r'^/?$', include('Pyowa.microblog.urls'), view_attrs={'logsql':True}),
 )

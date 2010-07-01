@@ -18,7 +18,11 @@ TEMPLATE = template.Template("""
     </table>""")
 
 class SqlLoggerMiddleware(object):
-    def process_response(self, request, response):
-        queries = [[{'sql':q['sql'], 'time':q['time']} for q in c.queries] for c in connections.all()]
-        response.write(TEMPLATE.render(template.Context({'queries':list(itertools.chain.from_iterable(queries))})))
-        return response
+
+    def process_view(self, request, view, args, kwargs):
+
+        if getattr(view, 'logsql', False):
+            response = view(request, *args, **kwargs)
+            queries = [[{'sql':q['sql'], 'time':q['time']} for q in c.queries] for c in connections.all()]
+            response.write(TEMPLATE.render(template.Context({'queries':list(itertools.chain.from_iterable(queries))})))
+            return response
