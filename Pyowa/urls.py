@@ -15,5 +15,5 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    url(r'^/?$', include('Pyowa.microblog.urls'), view_attrs={'logsql':True}),
+    url(r'', include('Pyowa.microblog.urls', namespace='microblog'), view_attrs={'logsql':True}),
 )

@@ -3,6 +3,6 @@ from Pyowa.microblog import views
 
 
 urlpatterns = patterns('microblog',
-    (r'^/?$', views.index),
-
+    url(r'^/?$', views.index, name="index"),
+    url(r'^edit/(?P<id>\d+)/$', views.edit, name="edit"),
 )

@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<form action="{% url microblog:edit blog.id %}" method="post">
+{% csrf_token %}
+{{ form.as_ul }}
+<input type="submit" value="Save" />
+</form>
+
+{% endblock %}

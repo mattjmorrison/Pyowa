@@ -7,12 +7,14 @@
 <title>Django Microblog Demo</title>
 </head>
 <body>
+    {% block content %}
     <ul>
         {% for blog in blogs %}
-            <li>{{ blog }}</li>
+            <li><a href="{% url microblog:edit blog.id %}">{{ blog }}</a></li>
         {% empty %}
             <li>No Blogs.</li>
         {% endfor %}
     </ul>
+    {% endblock %}
 </body>
 </html>
