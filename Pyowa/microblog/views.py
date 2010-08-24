@@ -3,7 +3,6 @@ from django.core.urlresolvers import reverse
 from Pyowa.microblog import models, forms
 from Pyowa.shortcuts import views
 
-
 @views.render_to('microblog/templates/list.html')
 def index(request):
     return {'blogs':models.Microblog.objects.select_related().all()}
