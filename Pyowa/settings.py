@@ -63,8 +63,6 @@ SECRET_KEY = 'du88i46*+s=dqmfb$xo_5*81wz#guxy-#n5l#%ev_jw5c5hec1'
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,7 +72,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'Pyowa.sqllogger.middleware.SqlLoggerMiddleware',
-    'Pyowa.permissions.middleware.Permissions',
 )
 
 ROOT_URLCONF = 'Pyowa.urls'
@@ -83,7 +80,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'templates',
+    '.',
 )
 
 INSTALLED_APPS = (
@@ -96,5 +93,4 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'Pyowa.shortcuts',
-    'Pyowa.permissions',
 )
